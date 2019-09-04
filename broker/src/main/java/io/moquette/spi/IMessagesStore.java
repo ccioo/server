@@ -138,6 +138,7 @@ public interface IMessagesStore {
 
     boolean updateSystemSetting(int id, String value, String desc);
     SystemSettingPojo getSystemSetting(int id);
+
     void createChatroom(String chatroomId, WFCMessage.ChatroomInfo chatroomInfo);
     void destoryChatroom(String chatroomId);
     WFCMessage.ChatroomInfo getChatroomInfo(String chatroomId);
@@ -145,10 +146,11 @@ public interface IMessagesStore {
     int getChatroomMemberCount(String chatroomId);
     Collection<String> getChatroomMemberClient(String userId);
     boolean checkUserClientInChatroom(String user, String clientId, String chatroomId);
-
     long insertChatroomMessages(String target, int line, long messageId);
     Collection<UserClientEntry> getChatroomMembers(String chatroomId);
     WFCMessage.PullMessageResult fetchChatroomMessage(String fromUser, String chatroomId, String exceptClientId, long fromMessageId);
+
+
 
     ErrorCode verifyToken(String userId, String token, List<String> serverIPs, List<Integer> ports);
     ErrorCode login(String name, String password, List<String> userIdRet);

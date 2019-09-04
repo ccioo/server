@@ -11,14 +11,22 @@ package cn.wildfirechat.pojos;
 
 import cn.wildfirechat.proto.ProtoConstants;
 import cn.wildfirechat.proto.WFCMessage;
+import com.sun.istack.internal.NotNull;
 import io.netty.util.internal.StringUtil;
 
 public class InputCreateChatroom {
+
     private String chatroomId;
+
+    @NotNull
     private String title;
+
     private String desc;
+
     private String portrait;
+
     private String extra;
+
     private Integer state;
 
     public WFCMessage.ChatroomInfo toChatroomInfo() {
